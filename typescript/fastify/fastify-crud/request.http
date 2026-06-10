@@ -3,4 +3,10 @@
 
 ### Status check
 
-GET {{base_url}}  HTTP/1.1
+GET {{base_url}} HTTP/1.1
+
+
+
+### post request on root
+
+POST {{base_url}} HTTP/1.1
