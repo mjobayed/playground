@@ -32,4 +32,14 @@ describe("API test", () => {
 
     expect(response.statusCode).toBe(400);
   });
+
+  it("POST / - Should fail because title is empty", async () => {
+    const response = await app.inject({
+      method: "POST",
+      url: "/",
+      payload: { title: "" },
+    });
+
+    expect(response.statusCode).toBe(400);
+  });
 });
