@@ -6,8 +6,9 @@ app.get("/", async (_, reply: FastifyReply) => {
   reply.code(200).send({ message: "OK" });
 });
 
-app.post("/", async (_, reply) => {
-  reply.code(201).send({ message: "created" });
+app.post<{ Body: { title: string } }>("/", async (request, reply) => {
+  const { title } = request.body;
+  reply.code(201).send({ title });
 });
 
 export default app;
