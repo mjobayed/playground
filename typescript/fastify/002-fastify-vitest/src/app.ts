@@ -13,9 +13,23 @@ app.get("/", async (_, reply: FastifyReply) => {
   reply.code(200).send({ message: "OK" });
 });
 
-app.post<{ Body: { title: string } }>("/", async (request, reply) => {
-  const { title } = request.body;
-  reply.code(201).send({ title });
-});
+app.post<{ Body: { title: string } }>(
+  "/",
+  {
+    schema: {
+      body: {
+        type: "object",
+        required: ["title"],
+        properties: {
+          title: { type: "string", minLength: 1 },
+        },
+      },
+    },
+  },
+  async (request, reply) => {
+    const { title } = request.body;
+    reply.code(201).send({ title });
+  },
+);
 
 export default app;
