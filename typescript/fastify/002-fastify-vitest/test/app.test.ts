@@ -16,9 +16,10 @@ describe("API test", () => {
     const response = await app.inject({
       method: "POST",
       url: "/",
+      payload: { title: "First one" },
     });
 
     expect(response.statusCode).toBe(201);
-    expect(response.json()).toEqual({ message: "created" });
+    expect(response.json()).toEqual({ title: "First one" });
   });
 });
