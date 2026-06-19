@@ -11,4 +11,14 @@ describe("API test", () => {
     expect(response.statusCode).toBe(200);
     expect(response.json()).toEqual({ message: "OK" });
   });
+
+  it("POST / - Should return created", async () => {
+    const response = await app.inject({
+      method: "POST",
+      url: "/",
+    });
+
+    expect(response.statusCode).toBe(201);
+    expect(response.json()).toEqual({ message: "created" });
+  });
 });
