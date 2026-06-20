@@ -11,4 +11,15 @@ describe("API test", () => {
     expect(response.statusCode).toBe(200);
     expect(response.json()).toEqual({ message: "OK" });
   });
+
+  it("POST / - Should pass", async () => {
+    const response = await app.inject({
+      method: "POST",
+      url: "/",
+      payload: { title: "hello" },
+    });
+
+    expect(response.statusCode).toBe(201);
+    expect(response.json()).toEqual({ title: "hello" });
+  });
 });
