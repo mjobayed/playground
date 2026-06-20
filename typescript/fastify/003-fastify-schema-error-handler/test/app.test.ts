@@ -35,4 +35,19 @@ describe("API test", () => {
     expect(data.code).toBe("FST_ERR_VALIDATION");
     expect(data.message).toBe("body/title must be string");
   });
+
+  it("POST / - Should fail because title is empty", async () => {
+    const response = await app.inject({
+      method: "POST",
+      url: "/",
+      payload: { title: "" },
+    });
+
+    expect(response.statusCode).toBe(400);
+    const data = response.json();
+    expect(data.code).toBe("FST_ERR_VALIDATION");
+    expect(data.message).toBe(
+      "body/title must NOT have fewer than 1 characters",
+    );
+  });
 });
