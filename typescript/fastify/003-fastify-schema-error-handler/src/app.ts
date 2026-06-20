@@ -13,4 +13,9 @@ app.get("/", async (_, reply) => {
   reply.code(200).send({ message: "OK" });
 });
 
+app.post<{ Body: { title: string } }>("/", async (request, reply) => {
+  const { title } = request.body;
+  reply.code(201).send({ title });
+});
+
 export default app;
