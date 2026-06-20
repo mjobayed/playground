@@ -22,4 +22,17 @@ describe("API test", () => {
     expect(response.statusCode).toBe(201);
     expect(response.json()).toEqual({ title: "hello" });
   });
+
+  it("POST / - Should fail because title is number", async () => {
+    const response = await app.inject({
+      method: "POST",
+      url: "/",
+      payload: { title: 1 },
+    });
+
+    expect(response.statusCode).toBe(400);
+    const data = response.json();
+    expect(data.code).toBe("FST_ERR_VALIDATION");
+    expect(data.message).toBe("body/title must be string");
+  });
 });
