@@ -1,6 +1,18 @@
-#include <stdio.h>
+#include "raylib.h"
+
+#define WINDOW_HEIGHT 800
+#define WINDOW_WIDTH 800
 
 int main() {
-    printf("Hello, World!\n");
+    InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "raylib window");
+
+    while (!WindowShouldClose()) {
+        BeginDrawing();
+        ClearBackground((Color){0, 0, 0, 255});
+        EndDrawing();
+    }
+
+    CloseWindow();
+
     return 0;
 }
