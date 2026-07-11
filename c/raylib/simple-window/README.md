@@ -2,7 +2,7 @@
 
 It just displays a simple window with raylib. It's easier than `SDL`
 
-# Requirements
+## Requirements
 
 On fedora run:
 
@@ -10,7 +10,7 @@ On fedora run:
 sudo dnf install -y gcc cmake raylib-devel
 ```
 
-# Build & run
+## Build & run
 
 ```bash
 cmake -S . -B build
