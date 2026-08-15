@@ -3,6 +3,7 @@
 int main(int argc, char *argv[]) {
   if (argc != 3) {
     printf("Invalid arguments!\n");
+    printf("Usage: rename-file <file-name> <new-file-name>\n");
     return 1;
   }
 
