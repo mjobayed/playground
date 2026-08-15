@@ -7,6 +7,13 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
+  FILE *file = fopen(argv[1], "r");
+  if (file == NULL) {
+    printf("File does not exist!\n");
+    return 2;
+  }
+  fclose(file);
+
   rename(argv[1], argv[2]);
   printf("File rename successful!\n");
 }
