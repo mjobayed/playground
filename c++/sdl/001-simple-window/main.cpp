@@ -12,6 +12,7 @@ int main() {
       SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
   printf("Running\n");
+  SDL_RenderPresent(renderer);
   SDL_Delay(2000);
 
   SDL_DestroyRenderer(renderer);
