@@ -1,5 +1,4 @@
 #include <SDL2/SDL.h>
-#include <cstdio>
 
 int main() {
   SDL_Init(SDL_INIT_VIDEO);
