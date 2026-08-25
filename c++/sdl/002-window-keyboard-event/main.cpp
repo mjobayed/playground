@@ -8,7 +8,7 @@ int main() {
                        SDL_WINDOWPOS_CENTERED, 800, 800, SDL_WINDOW_SHOWN);
 
   SDL_Renderer *renderer =
-      SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+      SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
 
   bool running = true;
   while (running) {
