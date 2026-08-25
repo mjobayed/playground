@@ -19,7 +19,7 @@ int main() {
         running = false;
       }
       if (e.type == SDL_KEYDOWN) {
-        printf("%d\n", e.key.keysym.sym);
+        running = false;
       }
     }
 
