@@ -10,8 +10,10 @@ int main() {
   SDL_Renderer *renderer =
       SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
-  SDL_RenderPresent(renderer);
-  SDL_Delay(3000);
+  bool running = true;
+  while (running) {
+    SDL_RenderPresent(renderer);
+  }
 
   SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
