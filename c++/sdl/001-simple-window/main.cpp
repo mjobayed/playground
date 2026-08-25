@@ -12,6 +12,10 @@ int main() {
       SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
   printf("Running\n");
+  SDL_SetRenderDrawColor(renderer, 255, 255, 255, 100);
+  // need to clear the render for the color to show up.
+  SDL_RenderClear(renderer);
+
   SDL_RenderPresent(renderer);
   SDL_Delay(2000);
 
