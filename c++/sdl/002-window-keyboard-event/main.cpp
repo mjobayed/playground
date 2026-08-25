@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <cstdio>
 
 int main() {
   SDL_Init(SDL_INIT_VIDEO);
@@ -16,6 +17,9 @@ int main() {
     while (SDL_PollEvent(&e)) {
       if (e.type == SDL_QUIT) {
         running = false;
+      }
+      if (e.type == SDL_KEYDOWN) {
+        printf("%d\n", e.key.keysym.sym);
       }
     }
 
