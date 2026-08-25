@@ -12,7 +12,10 @@ int main() {
       SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
   printf("Running\n");
-  SDL_SetRenderDrawColor(renderer, 255, 255, 255, 100);
+
+  // Can use hex code with 0x prefix.
+  SDL_SetRenderDrawColor(renderer, 0x1e, 0x1e, 0x2e, 255);
+
   // need to clear the render for the color to show up.
   SDL_RenderClear(renderer);
 
