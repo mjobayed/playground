@@ -24,7 +24,7 @@ int main() {
     }
 
     SDL_SetRenderDrawColor(renderer, 0x55, 0x00, 0x00, 255);
-    SDL_Rect rect = {0, 0, 100, 100};
+    SDL_Rect rect = {0, 0, w / 2, h};
     SDL_RenderFillRect(renderer, &rect);
 
     SDL_RenderPresent(renderer);
