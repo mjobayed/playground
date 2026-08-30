@@ -8,6 +8,9 @@ int main() {
   SDL_Renderer *renderer =
       SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
 
+  int w, h;
+  SDL_GetRendererOutputSize(renderer, &w, &h);
+
   bool running = true;
   while (running) {
     SDL_Event e;
