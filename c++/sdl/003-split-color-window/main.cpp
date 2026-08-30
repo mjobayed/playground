@@ -24,12 +24,12 @@ int main() {
     }
 
     SDL_SetRenderDrawColor(renderer, 0x55, 0x00, 0x00, 255);
-    SDL_Rect rect = {0, 0, w / 2, h};
-    SDL_RenderFillRect(renderer, &rect);
+    SDL_Rect rectLeft = {0, 0, w / 2, h};
+    SDL_RenderFillRect(renderer, &rectLeft);
 
     SDL_SetRenderDrawColor(renderer, 0x00, 0x55, 0x00, 255);
-    SDL_Rect rect2 = {w / 2, 0, w / 2, h};
-    SDL_RenderFillRect(renderer, &rect2);
+    SDL_Rect rectRight = {w / 2, 0, w / 2, h};
+    SDL_RenderFillRect(renderer, &rectRight);
 
     SDL_RenderPresent(renderer);
   }
