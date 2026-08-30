@@ -20,6 +20,9 @@ int main() {
       }
     }
 
+    SDL_SetRenderDrawColor(renderer, 0x55, 0x00, 0x00, 255);
+    SDL_RenderFillRect(renderer, NULL);
+
     SDL_RenderPresent(renderer);
   }
 
