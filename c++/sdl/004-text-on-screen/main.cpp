@@ -16,8 +16,11 @@ int main() {
       TTF_RenderText_Solid(font, "Hello, World!", textColor);
   SDL_Texture *textTexture =
       SDL_CreateTextureFromSurface(renderer, textSurface);
+
+  int textWidth = textSurface->w;
+  int textHeight = textSurface->h;
   SDL_FreeSurface(textSurface);
-  SDL_Rect textRect = {0, 0, 300, 100};
+  SDL_Rect textRect = {0, 0, textWidth, textHeight};
 
   bool running = true;
   while (running) {
