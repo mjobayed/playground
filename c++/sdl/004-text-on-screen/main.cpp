@@ -16,6 +16,7 @@ int main() {
       TTF_RenderText_Solid(font, "Hello, World!", textColor);
   SDL_Texture *textTexture =
       SDL_CreateTextureFromSurface(renderer, textSurface);
+  SDL_FreeSurface(textSurface);
   SDL_Rect textRect = {0, 0, 300, 100};
 
   bool running = true;
@@ -34,7 +35,6 @@ int main() {
     SDL_RenderPresent(renderer);
   }
 
-  SDL_FreeSurface(textSurface);
   SDL_DestroyTexture(textTexture);
   TTF_CloseFont(font);
   SDL_DestroyRenderer(renderer);
