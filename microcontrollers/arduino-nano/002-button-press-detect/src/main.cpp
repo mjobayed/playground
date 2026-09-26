@@ -16,8 +16,12 @@ void loop() {
   int buttonState = digitalRead(buttonPin);
 
   if (buttonState == LOW && lastButtonState == HIGH) {
-    Serial.println("Button Pressed!");
-    delay(150);
+    // Debounce protection
+    delay(20);
+    if (digitalRead(buttonPin) == LOW) {
+      Serial.println("Button Pressed!");
+      delay(150);
+    }
   }
 
   lastButtonState = buttonState;
