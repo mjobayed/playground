@@ -2,6 +2,7 @@
 
 // This targets the D2 pin
 const int buttonPin = 2;
+int lastButtonState = HIGH;
 
 void setup() {
   Serial.begin(9600);
@@ -14,8 +15,10 @@ void setup() {
 void loop() {
   int buttonState = digitalRead(buttonPin);
 
-  if (buttonState == LOW) {
+  if (buttonState == LOW && lastButtonState == HIGH) {
     Serial.println("Button Pressed!");
     delay(150);
   }
+
+  lastButtonState = buttonState;
 }
