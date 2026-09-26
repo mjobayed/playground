@@ -13,6 +13,9 @@ void setup() {
 
 void loop() {
   int buttonState = digitalRead(buttonPin);
-  Serial.println(buttonState);
-  delay(200);
+
+  if (buttonState == LOW) {
+    Serial.println("Button Pressed!");
+    delay(150);
+  }
 }
