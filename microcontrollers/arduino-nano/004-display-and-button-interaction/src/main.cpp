@@ -51,6 +51,7 @@ void loop() {
     delay(20);
     if (digitalRead(BTN2_PIN) == LOW) {
       display.clearDisplay();
+      display.setCursor(0, 0);
       display.println("Program Start");
       display.println("=============");
       display.display();
