@@ -34,7 +34,7 @@ void loop() {
   display.setCursor(0, 0);
   display.print("Temperature: ");
   display.print(tempC);
-  display.println("°C");
+  display.println(" C");
   display.display();
   delay(2000);
 }
