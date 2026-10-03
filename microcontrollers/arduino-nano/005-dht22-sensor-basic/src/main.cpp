@@ -15,10 +15,15 @@ void setup() {
 void loop() {
   tempC = dht.readTemperature();
   tempF = dht.readTemperature(true);
-  Serial.print("Temperature: ");
-  Serial.print(tempC);
-  Serial.print(" °C/ ");
-  Serial.print(tempF);
-  Serial.println(" °F");
+
+  if (isnan(tempC) || isnan(tempF)) {
+    Serial.println("Failed to get info from the DHT22 sensor!");
+  } else {
+    Serial.print("Temperature: ");
+    Serial.print(tempC);
+    Serial.print(" °C/ ");
+    Serial.print(tempF);
+    Serial.println(" °F");
+  }
   delay(2000);
 }
