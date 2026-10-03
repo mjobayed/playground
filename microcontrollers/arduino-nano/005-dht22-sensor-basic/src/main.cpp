@@ -4,7 +4,7 @@
 const int DHTPIN = 2;
 DHT dht(DHTPIN, DHT22);
 
-float temp;
+float tempC;
 
 void setup() {
   Serial.begin(9600);
@@ -12,9 +12,9 @@ void setup() {
 }
 
 void loop() {
-  temp = dht.readTemperature();
+  tempC = dht.readTemperature();
   Serial.print("Temperature: ");
-  Serial.print(temp);
+  Serial.print(tempC);
   Serial.println(" °C");
   delay(2000);
 }
