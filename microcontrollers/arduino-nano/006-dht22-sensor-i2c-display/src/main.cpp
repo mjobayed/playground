@@ -14,6 +14,7 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 DHT dht(DHT_PIN, DHT22);
 
 float tempC;
+float tempF;
 
 void setup() {
   Serial.begin(9600);
@@ -28,14 +29,18 @@ void setup() {
 
 void loop() {
   tempC = dht.readTemperature();
+  tempF = dht.readTemperature(true);
 
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
   display.setCursor(0, 0);
   display.println("     Temperature");
   display.println("     ===========");
+  display.print("  ");
   display.print(tempC);
-  display.println(" C");
+  display.print(" C | ");
+  display.print(tempF);
+  display.println(" F");
   display.display();
   delay(2000);
 }
