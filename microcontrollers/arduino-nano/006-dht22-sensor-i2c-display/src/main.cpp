@@ -31,6 +31,7 @@ void loop() {
 
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0, 0);
   display.print("Temperature: ");
   display.print(tempC);
   display.println("°C");
