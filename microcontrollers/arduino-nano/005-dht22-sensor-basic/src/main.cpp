@@ -23,11 +23,11 @@ void loop() {
   } else {
     Serial.print("Temperature: ");
     Serial.print(tempC);
-    Serial.print(" °C/ ");
+    Serial.print("°C / ");
     Serial.print(tempF);
-    Serial.print(" °F | Humidity: ");
+    Serial.print("°F | Humidity: ");
     Serial.print(hum);
-    Serial.println(" %");
+    Serial.println("%");
   }
   delay(2000);
 }
