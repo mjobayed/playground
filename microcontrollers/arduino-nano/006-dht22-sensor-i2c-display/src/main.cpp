@@ -33,22 +33,30 @@ void loop() {
   tempF = dht.readTemperature(true);
   hum = dht.readHumidity();
 
-  display.clearDisplay();
-  display.setTextColor(SSD1306_WHITE);
-  display.setCursor(0, 0);
-  display.println("     Temperature");
-  display.println("     ===========");
-  display.print("  ");
-  display.print(tempC);
-  display.print(" C | ");
-  display.print(tempF);
-  display.println(" F");
-  display.println();
-  display.println("       Humidity");
-  display.println("       ========");
-  display.print("        ");
-  display.print(hum);
-  display.println("%");
-  display.display();
+  if (isnan(tempC) || isnan(tempF) || isnan(hum)) {
+    display.clearDisplay();
+    display.setTextColor(SSD1306_WHITE);
+    display.setCursor(0, 0);
+    display.println("Failed to get data from DHT22 sensor!");
+    display.display();
+  } else {
+    display.clearDisplay();
+    display.setTextColor(SSD1306_WHITE);
+    display.setCursor(0, 0);
+    display.println("     Temperature");
+    display.println("     ===========");
+    display.print("  ");
+    display.print(tempC);
+    display.print(" C | ");
+    display.print(tempF);
+    display.println(" F");
+    display.println();
+    display.println("       Humidity");
+    display.println("       ========");
+    display.print("        ");
+    display.print(hum);
+    display.println("%");
+    display.display();
+  }
   delay(2000);
 }
