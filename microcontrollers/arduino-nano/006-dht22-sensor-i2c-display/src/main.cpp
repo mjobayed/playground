@@ -15,6 +15,7 @@ DHT dht(DHT_PIN, DHT22);
 
 float tempC;
 float tempF;
+float hum;
 
 void setup() {
   Serial.begin(9600);
@@ -30,6 +31,7 @@ void setup() {
 void loop() {
   tempC = dht.readTemperature();
   tempF = dht.readTemperature(true);
+  hum = dht.readHumidity();
 
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
@@ -41,6 +43,12 @@ void loop() {
   display.print(" C | ");
   display.print(tempF);
   display.println(" F");
+  display.println();
+  display.println("       Humidity");
+  display.println("       ========");
+  display.print("        ");
+  display.print(hum);
+  display.println("%");
   display.display();
   delay(2000);
 }
