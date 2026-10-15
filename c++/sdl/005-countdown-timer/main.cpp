@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_render.h>
 #include <SDL2/SDL_video.h>
+#include <iostream>
 
 int main() {
   SDL_Init(SDL_INIT_VIDEO);
@@ -24,6 +25,9 @@ int main() {
     SDL_SetRenderDrawColor(renderer, 0x1e, 0x1e, 0x2e, 255);
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
+
+    Uint32 ticks = SDL_GetTicks();
+    std::cout << ticks << "\n";
   }
   SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
