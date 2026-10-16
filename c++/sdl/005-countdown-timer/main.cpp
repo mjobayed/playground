@@ -11,8 +11,13 @@ int main() {
   SDL_Renderer *renderer =
       SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
 
+  Uint64 lastTick = SDL_GetTicks();
+  int frames = 0;
+
   bool running = true;
   while (running) {
+    Uint64 curTick = SDL_GetTicks();
+
     SDL_Event e;
     while (SDL_PollEvent(&e)) {
       if (e.type == SDL_QUIT) {
@@ -25,9 +30,13 @@ int main() {
     SDL_SetRenderDrawColor(renderer, 0x1e, 0x1e, 0x2e, 255);
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
+    frames++;
 
-    Uint64 ticks = SDL_GetTicks64();
-    std::cout << ticks << "\n";
+    if (curTick - lastTick >= 1000) {
+      lastTick = curTick;
+      std::cout << frames << "\n";
+      frames = 0;
+    }
   }
   SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
