@@ -26,7 +26,7 @@ int main() {
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
 
-    Uint32 ticks = SDL_GetTicks();
+    Uint64 ticks = SDL_GetTicks64();
     std::cout << ticks << "\n";
   }
   SDL_DestroyRenderer(renderer);
