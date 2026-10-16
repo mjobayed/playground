@@ -6,7 +6,6 @@
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_video.h>
 #include <cstdio>
-#include <iostream>
 #include <string>
 
 int main() {
