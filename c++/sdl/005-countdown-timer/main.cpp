@@ -1,10 +1,13 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_render.h>
+#include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_video.h>
 #include <iostream>
 
 int main() {
   SDL_Init(SDL_INIT_VIDEO);
+  TTF_Init();
+
   SDL_Window *window =
       SDL_CreateWindow("Hello World", SDL_WINDOWPOS_CENTERED,
                        SDL_WINDOWPOS_CENTERED, 800, 800, SDL_WINDOW_SHOWN);
@@ -40,5 +43,6 @@ int main() {
   }
   SDL_DestroyRenderer(renderer);
   SDL_DestroyWindow(window);
+  TTF_Quit();
   SDL_Quit();
 }
