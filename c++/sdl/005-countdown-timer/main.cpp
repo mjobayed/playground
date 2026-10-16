@@ -61,7 +61,6 @@ int main() {
 
     if (curTick - lastTick >= 1000) {
       lastTick = curTick;
-      std::cout << frames << "\n";
       totalFrames = frames;
       frames = 0;
     }
