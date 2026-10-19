@@ -1,11 +1,11 @@
 #include <SDL2/SDL.h>
 
-void renderRectangle(SDL_Renderer *Renderer) {
+void renderRectangle(SDL_Renderer *Renderer, int x, int y, int w, int h) {
   SDL_Rect rect;
-  rect.x = 350;
-  rect.y = 50;
-  rect.w = 50;
-  rect.h = 50;
+  rect.x = x;
+  rect.y = y;
+  rect.w = w;
+  rect.h = h;
   SDL_SetRenderDrawColor(Renderer, 0xa6, 0xe3, 0xa1, 255);
   SDL_RenderFillRect(Renderer, &rect);
 }
@@ -58,7 +58,7 @@ int main() {
     SDL_SetRenderDrawColor(renderer, 0xfa, 0xb3, 0x87, 255);
     SDL_RenderFillRect(renderer, &rect3);
 
-    renderRectangle(renderer);
+    renderRectangle(renderer, 350, 150, 50, 50);
 
     SDL_RenderPresent(renderer);
   }
