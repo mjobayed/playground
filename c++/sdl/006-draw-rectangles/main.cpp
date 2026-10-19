@@ -34,31 +34,10 @@ int main() {
     SDL_SetRenderDrawColor(renderer, 0x1e, 0x1e, 0x2e, 255);
     SDL_RenderClear(renderer);
 
-    SDL_Rect rect1;
-    rect1.x = 50;
-    rect1.y = 50;
-    rect1.w = 50;
-    rect1.h = 50;
-    SDL_SetRenderDrawColor(renderer, 0xf3, 0x8b, 0xa8, 255);
-    SDL_RenderFillRect(renderer, &rect1);
-
-    SDL_Rect rect2;
-    rect2.x = 150;
-    rect2.y = 50;
-    rect2.w = 50;
-    rect2.h = 50;
-    SDL_SetRenderDrawColor(renderer, 0xeb, 0xa0, 0xac, 255);
-    SDL_RenderFillRect(renderer, &rect2);
-
-    SDL_Rect rect3;
-    rect3.x = 250;
-    rect3.y = 50;
-    rect3.w = 50;
-    rect3.h = 50;
-    SDL_SetRenderDrawColor(renderer, 0xfa, 0xb3, 0x87, 255);
-    SDL_RenderFillRect(renderer, &rect3);
-
-    renderRectangle(renderer, 350, 150, 50, 50);
+    renderRectangle(renderer, 50, 50, 50, 50);
+    renderRectangle(renderer, 150, 50, 50, 50);
+    renderRectangle(renderer, 250, 50, 50, 50);
+    renderRectangle(renderer, 350, 50, 50, 50);
 
     SDL_RenderPresent(renderer);
   }
