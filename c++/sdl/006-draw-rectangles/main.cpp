@@ -1,5 +1,15 @@
 #include <SDL2/SDL.h>
 
+void renderRectangle(SDL_Renderer *Renderer) {
+  SDL_Rect rect;
+  rect.x = 350;
+  rect.y = 50;
+  rect.w = 50;
+  rect.h = 50;
+  SDL_SetRenderDrawColor(Renderer, 0xa6, 0xe3, 0xa1, 255);
+  SDL_RenderFillRect(Renderer, &rect);
+}
+
 int main() {
   SDL_Init(SDL_INIT_VIDEO);
   SDL_Window *window =
@@ -47,6 +57,8 @@ int main() {
     rect3.h = 50;
     SDL_SetRenderDrawColor(renderer, 0xfa, 0xb3, 0x87, 255);
     SDL_RenderFillRect(renderer, &rect3);
+
+    renderRectangle(renderer);
 
     SDL_RenderPresent(renderer);
   }
