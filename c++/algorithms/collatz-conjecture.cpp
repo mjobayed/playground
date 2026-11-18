@@ -1,9 +1,12 @@
 #include <iostream>
 
 int main() {
-  int num = 5;
+  int num = 1;
 
-  std::cout << "Counting for: " << num << "\n";
+  std::cout << "Enter a number: ";
+  std::cin >> num;
+
+  std::cout << "\nCounting for: " << num << "\n";
   while (num != 1) {
     if (num % 2 == 0) {
       num = num / 2;
