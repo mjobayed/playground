@@ -4,10 +4,15 @@
 int main() {
   double num = 1;
   double steps = 0;
-  double max = 0;
+  double minMax = 0;
+  bool positive = true;
 
   std::cout << "Enter a number: ";
   std::cin >> num;
+
+  if (num < 0) {
+    positive = false;
+  }
 
   std::cout << "\nCounting for: " << num << "\n";
   while (num != 1 && num != -1 && num != -5 && num != -17 && num != 0) {
@@ -18,14 +23,26 @@ int main() {
     }
     std::cout << num << "\n";
 
-    if (num > max) {
-      max = num;
+    if (positive && num > minMax) {
+      minMax = num;
+    }
+
+    if (!positive && num < minMax) {
+      minMax = num;
     }
 
     steps++;
   }
 
   std::cout << "Total stopping time: " << steps << "\n";
-  std::cout << "Maximum number: " << max << "\n";
+
+  if (positive && num != 0) {
+    std::cout << "Maximum number: " << minMax << "\n";
+  }
+
+  if (!positive) {
+    std::cout << "Minimum number: " << minMax << "\n";
+  }
+
   return 0;
 }
