@@ -3,6 +3,7 @@
 
 int main() {
   double num = 1;
+  double steps = 0;
 
   std::cout << "Enter a number: ";
   std::cin >> num;
@@ -15,7 +16,9 @@ int main() {
       num = (num * 3) + 1;
     }
     std::cout << num << "\n";
+    steps++;
   }
 
+  std::cout << "Total stopping time: " << steps << "\n";
   return 0;
 }
