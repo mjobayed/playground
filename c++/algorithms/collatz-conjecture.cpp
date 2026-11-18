@@ -15,6 +15,10 @@ int main() {
   }
 
   std::cout << "\nCounting for: " << num << "\n";
+
+  // Test for all currently possible loop (as of writing this program).
+  // For a list of all loops, see "Iterating on all integers" section here:
+  // https://en.wikipedia.org/wiki/Collatz_conjecture
   while (num != 1 && num != -1 && num != -5 && num != -17 && num != 0) {
     if (fmod(num, 2) == 0) {
       num = num / 2;
