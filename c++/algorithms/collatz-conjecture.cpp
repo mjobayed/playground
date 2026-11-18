@@ -4,6 +4,7 @@
 int main() {
   double num = 1;
   double steps = 0;
+  double max = 0;
 
   std::cout << "Enter a number: ";
   std::cin >> num;
@@ -16,9 +17,15 @@ int main() {
       num = (num * 3) + 1;
     }
     std::cout << num << "\n";
+
+    if (num > max) {
+      max = num;
+    }
+
     steps++;
   }
 
   std::cout << "Total stopping time: " << steps << "\n";
+  std::cout << "Maximum number: " << max << "\n";
   return 0;
 }
