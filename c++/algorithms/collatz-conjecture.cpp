@@ -8,7 +8,7 @@ int main() {
   std::cin >> num;
 
   std::cout << "\nCounting for: " << num << "\n";
-  while (num != 1) {
+  while (num != 1 && num != -1 && num != -5 && num != -17 && num != 0) {
     if (fmod(num, 2) == 0) {
       num = num / 2;
     } else {
