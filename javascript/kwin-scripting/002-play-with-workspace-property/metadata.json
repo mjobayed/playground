@@ -1,0 +1,20 @@
+{
+    "KPlugin": {
+        "Name": "Play With Workspace",
+        "Description": "Playing with workspaces",
+        "Icon": "preferences-system-windows",
+        "Authors": [
+            {
+                "Email": "contact@mjobayed.com",
+                "Name": "Md. Jobayed Islam"
+            }
+        ],
+        "Id": "playwithworkspace",
+        "Version": "1.0",
+        "License": "MIT",
+        "Website": "https://github.com/mjobayed/playground/tree/main/javascript/kwin-scripting/002-play-with-workspace-property/"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js",
+    "KPackageStructure": "KWin/Script"
+}
