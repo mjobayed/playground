@@ -12,7 +12,7 @@
         "Id": "helloworld",
         "Version": "1.0",
         "License": "MIT",
-        "Website": "https://github.com/mjobayed/playground/blob/main/javascript/kwin-scripts/001-hello-world/"
+        "Website": "https://github.com/mjobayed/playground/tree/main/javascript/kwin-scripting/001-hello-world/"
     },
     "X-Plasma-API": "javascript",
     "X-Plasma-MainScript": "code/main.js",
