@@ -1,0 +1,20 @@
+{
+    "KPlugin": {
+        "Name": "Hello World",
+        "Description": "Just a hello world script",
+        "Icon": "preferences-system-windows",
+        "Authors": [
+            {
+                "Email": "contact@mjobayed.com",
+                "Name": "Md. Jobayed Islam"
+            }
+        ],
+        "Id": "helloworld",
+        "Version": "1.0",
+        "License": "MIT",
+        "Website": "https://github.com/mjobayed/playground/blob/main/javascript/kwin-scripts/001-hello-world/"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js",
+    "KPackageStructure": "KWin/Script"
+}
