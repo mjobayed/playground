@@ -2,7 +2,7 @@ install:
 	kpackagetool6 --type=KWin/Script -i .
 
 uninstall:
-	kpackagetool6 --type=KWin/Script -r .
+	kpackagetool6 --type=KWin/Script -r helloworld
 
 reload:
 	kwriteconfig6 --file kwinrc --group Plugins --key helloworldEnabled false
