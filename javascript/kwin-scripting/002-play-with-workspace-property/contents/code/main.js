@@ -9,3 +9,9 @@ const windows = workspace.stackingOrder;
 
 // Get the current desktop
 print(workspace.currentDesktop);
+
+// Get the name of the desktop
+print(workspace.currentDesktop.name);
+
+// Get the number of the desktop
+print(workspace.currentDesktop.x11DesktopNumber);
