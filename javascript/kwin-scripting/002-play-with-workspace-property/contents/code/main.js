@@ -21,6 +21,6 @@ const curDesktop = workspace.currentDesktop
 
 for (let w of windows) {
   if (w.desktops[0] == curDesktop) {
-      print("on current desktop")
+      print(w.caption + " is on current desktop")
   }
 }
