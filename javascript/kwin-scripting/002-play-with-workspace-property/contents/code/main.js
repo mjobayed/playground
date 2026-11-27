@@ -8,10 +8,19 @@ const windows = workspace.stackingOrder;
 // }
 
 // Get the current desktop
-print(workspace.currentDesktop);
+// print(workspace.currentDesktop);
 
 // Get the name of the desktop
-print(workspace.currentDesktop.name);
+// print(workspace.currentDesktop.name);
 
 // Get the number of the desktop
-print(workspace.currentDesktop.x11DesktopNumber);
+// print(workspace.currentDesktop.x11DesktopNumber);
+
+// Test if window is on current desktop
+const curDesktop = workspace.currentDesktop
+
+for (let w of windows) {
+  if (w.desktops[0] == curDesktop) {
+      print("on current desktop")
+  }
+}
