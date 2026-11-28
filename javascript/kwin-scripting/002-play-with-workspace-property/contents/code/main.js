@@ -31,7 +31,7 @@ const curDesktop = workspace.currentDesktop
 for (let w of windows) {
   if (w.desktops[0] == curDesktop) {
     if (w.excludeFromCapture == true) {
-      print(w.caption + " is excluded from capture.")
+      w.excludeFromCapture = false
     }
   }
 }
