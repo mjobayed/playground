@@ -17,10 +17,21 @@ const windows = workspace.stackingOrder;
 // print(workspace.currentDesktop.x11DesktopNumber);
 
 // Test if window is on current desktop
+// const curDesktop = workspace.currentDesktop
+//
+// for (let w of windows) {
+//   if (w.desktops[0] == curDesktop) {
+//       print(w.caption + " is on current desktop")
+//   }
+// }
+
+// Check if window is excluded from capture
 const curDesktop = workspace.currentDesktop
 
 for (let w of windows) {
   if (w.desktops[0] == curDesktop) {
-      print(w.caption + " is on current desktop")
+    if (w.excludeFromCapture == true) {
+      print(w.caption + " is excluded from capture.")
+    }
   }
 }
